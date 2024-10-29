@@ -1,0 +1,111 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600&display=swap');
+
+body {
+    margin: 0;
+    background: #000;
+    color: #eee;
+    font-family: Poppins, sans-serif;
+    font-size: 12px;
+}
+
+header {
+    width: 800%;
+    max-width: 1140px;
+    margin: auto;
+    height: 50px;
+    display: flex;
+    align-items: center;
+    color: #eee;
+}
+header a {
+    margin-right: 40px;
+    color: inherit;
+    text-decoration: none;
+}
+
+.carousel {
+    position: relative;
+    overflow: hidden;
+    height: 100vh;
+}
+.carousel .list {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    top: 0;
+    left: 0;
+    display: flex;
+    transition: transform 0.5s;
+}
+.carousel .item {
+    width: 100%;
+    height: 100%;
+    position: relative;
+    opacity: 0; 
+    transition: opacity 1s ease; 
+}
+.carousel input[type="radio"]:checked ~ .list .item {
+    opacity: 1; 
+}
+.carousel .item img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.5); 
+}
+.carousel .content {
+    position: absolute;
+    top: 20%;
+    width: 80%;
+    max-width: 1140px;
+    left: 50%;
+    transform: translateX(-50%);
+    color: #fff;
+    text-shadow: 0 4px 10px rgba(0, 0, 0, 0.4);
+    background: rgba(0, 0, 0, 0.6); 
+    padding: 20px;
+    border-radius: 10px;
+}
+.carousel .content .title {
+    font-size: 3em;
+    font-weight: bold;
+}
+.carousel .content .title:hover {
+    color: #f1683a; 
+    text-decoration: underline; 
+}
+.carousel .content .topic {
+    color: #f1683a;
+    font-size: 1.5em;
+}
+.carousel .navigation label {
+    background: rgba(255, 255, 255, 0.2);
+    padding: 10px;
+    border-radius: 50%;
+    transition: background 0.3s;
+}
+.carousel .navigation label:hover {
+    background: #fff;
+    color: #000;
+}
+.indicators {
+    display: flex;
+    justify-content: center;
+    margin-top: 20px;
+}
+.indicators label {
+    width: 10px;
+    height: 10px;
+    background: #fff;
+    border-radius: 50%;
+    margin: 0 5px;
+    cursor: pointer;
+}
+.indicators label:hover {
+    background: #f1683a;
+}
+
+@media (max-width: 678px) {
+    .carousel .content .title { font-size: 1.8em; }
+    .carousel .content .topic { font-size: 1.2em; }
+}
